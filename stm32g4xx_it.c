@@ -370,7 +370,7 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
         }
         if(counter_manch_read == 0)
         {
-          if(manch_read == 0x0d41)
+        /*  if(manch_read == 0x0d41)
           {
             TIM1->CR1 &= ~TIM_CR1_CEN;
             buff_read[0] = 0x75;
@@ -395,7 +395,7 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
             
             DMA1_Channel1->CCR |= DMA_CCR_EN;
           TIM1->CR1 |= TIM_CR1_CEN;
-          }
+          }*/
           MANCH_REG = 0;
           while(!(USART3->ISR & USART_ISR_TXE));
           USART3->TDR = manch_read;
